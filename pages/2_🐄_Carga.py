@@ -6,10 +6,15 @@ import geemap.colormaps as cm
 import datetime
 import pandas as pd
 import datetime
+import json
 
-# Inicializar Google Earth Engine
-ee.Authenticate()
-ee.Initialize(project='ee-brdzlopez')
+# Cargar los secretos
+json_data = st.secrets["json_data"]
+service_account = st.secrets["service_account"]
+
+# Authorising the app
+credentials = ee.ServiceAccountCredentials(service_account, key_data = json_data)
+ee.Initialize(credentials)
 
 # Configuración de página
 st.set_page_config(
