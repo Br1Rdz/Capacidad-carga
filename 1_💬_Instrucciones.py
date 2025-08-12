@@ -85,7 +85,7 @@ st.markdown(
        <br>
        <br><strong>Nota importante:
        Para crear un polígono correctamente, espera aproximadamente 3 segundos entre cada punto que marques.
-       Esto permite que el mapa se actualice sin problemas. Si agregas los puntos muy rápido, el mapa se reiniciara, <i>Por favor espera un poquio mas..</i>.</strong>
+       Esto permite que el mapa se actualice sin problemas. Si agregas los puntos muy rápido, el mapa se reiniciara. <i>...Por favor espera un poquio mas..</i>.</strong>
     </div>
     """,
     unsafe_allow_html=True
