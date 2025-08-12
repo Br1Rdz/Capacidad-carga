@@ -25,18 +25,6 @@ st.set_page_config(
     menu_items=None
 )
 st.logo("./Informacion.png", icon_image="./info2.png")
-# Sidebar
-# st.sidebar.title(":red-background[INFORMACION]\nV.1.0")
-# st.sidebar.info("""
-# Cálculo de área idónea para el pastoreo a partir de imágenes LANDSAT 8.
-# - Selección de píxeles con **NDVI idóneo**.
-# - Cálculo del área total en m².
-# - Estimación de unidades animales para el predio.  
-# \n
-# Developed by Bruno Rodriguez
-# """)
-# st.sidebar.info("Github: [Br1Rdz](https://github.com/Br1Rdz/)")
-# st.sidebar.image("./Clicker.jpg")
 
     #-------- Hide streamlit style ------------    
 hide_st_style = '''
@@ -47,6 +35,20 @@ hide_st_style = '''
                       </style>
       '''
 st.markdown(hide_st_style, unsafe_allow_html= True)
+
+st.markdown(
+     """
+     <style>
+     # @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap');
+     .custom-text {
+         font-family: 'Bebas Neue', sans-serif;
+         font-size: 12px;
+         text-align: justify;
+     }
+     </style>
+     """,
+     unsafe_allow_html=True
+ )
 
 # Título
 st.markdown("""
@@ -176,6 +178,8 @@ if map_output and 'all_drawings' in map_output and map_output['all_drawings']:
 
         # Renderizar mapa actualizado
         st_folium(Map, height=350, width=700, key="main_map_ndvi", use_container_width = True)
+        st.markdown(""" <div class="custom-text", style="color:yellow; font-size:20px; text-align: center;">
+                    <i>Nolite te bastardes carborundorum</i></div>""", unsafe_allow_html=True)
     else:
         st.warning("No se encontró imagen para las fechas seleccionadas.")
 else:
